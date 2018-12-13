@@ -7,4 +7,4 @@ target_link_libraries(sha256_preimage ethsnarks_common)
 set_property(TARGET sha256_preimage PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 add_executable(sha256_preimage_cli sha256_preimage_cli.cpp)
-target_link_libraries(sha256_preimage_cli ethsnarks_common)
+target_link_libraries(sha256_preimage_cli ethsnarks_common crypto)
