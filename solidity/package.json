@@ -1,0 +1,15 @@
+{
+  "name": "ethsnarks-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "osuke",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "ffi": "node-ffi/node-ffi"
+  },
+  "scripts": {
+    "compile": "truffle compile",
+    "test": "truffle test"        
+  }
+}
