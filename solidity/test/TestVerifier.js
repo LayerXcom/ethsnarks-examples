@@ -46,7 +46,7 @@ contract("TestableVerifier", () => {
 
         const proofJson = libsha256Preimage.sha256_preimage_prove(sha256ProvingKeyPath, preimageBytes64);
         const proof = JSON.parse(proofJson);
-        console.log(proof);
+        console.log(`proof: ${proof}`);
 
 
         const vk_json = fs.readFileSync(sha256VerifyingKeyPath);
