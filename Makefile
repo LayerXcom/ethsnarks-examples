@@ -21,13 +21,13 @@ git-submodules:
 clean:
 	rm -rf .build
 
-python-test:
-	make -C python test
+# python-test:
+# 	make -C python test
 
 solidity-test:
 	make -C solidity test
 
-test: .keys/sha256_preimage.pk.raw solidity-test python-test
+test: .keys/sha256_preimage.pk.raw solidity-test
 
 .keys/sha256_preimage.pk.raw: $(CLI)
 	mkdir -p $(dir $@)
