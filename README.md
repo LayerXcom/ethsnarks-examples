@@ -15,4 +15,7 @@ $ cd /workspace/ethsnarks-examples
 $ make
 ```
 
+## gas measurement
+
+sha256: 594630
 
