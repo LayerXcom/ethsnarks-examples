@@ -3,3 +3,4 @@ bin
 .keys
 .vscode
 node_modules
+.pytest_cache
