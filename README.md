@@ -84,6 +84,7 @@ gas estimation: 594886
 * G2 elements in VK: 3
 * GT elements in VK: 0
 * VK size in bits: 2292
+```
 
 #### proof generation
 
