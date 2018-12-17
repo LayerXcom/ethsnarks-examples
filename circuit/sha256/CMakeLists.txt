@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 project(ethsnarks-exmaples)
-add_subdirectory(../ethsnarks ../.build/ethsnarks EXCLUDE_FROM_ALL)
+add_subdirectory(../../ethsnarks ../../.build/ethsnarks EXCLUDE_FROM_ALL)
 
 add_library(sha256_preimage SHARED sha256_preimage.cpp)
 target_link_libraries(sha256_preimage ethsnarks_common)

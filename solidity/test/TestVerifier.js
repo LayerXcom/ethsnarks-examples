@@ -42,11 +42,11 @@ let proofToFlat = (proof) => {
 contract("TestableVerifier", () => {
     it("should be success for verifying", async () => {        
 
-        const preimageBytes64 = "0x0005";
+        const preimageBytes64 = "5";
 
         const proofJson = libsha256Preimage.sha256_preimage_prove(sha256ProvingKeyPath, preimageBytes64);
         const proof = JSON.parse(proofJson);
-        console.log(`proof: ${proofJson}`);
+        console.log(`proof: ${proofJson}\n`);
 
 
         const vk_json = fs.readFileSync(sha256VerifyingKeyPath);
@@ -55,8 +55,8 @@ contract("TestableVerifier", () => {
 
         const verifier = await TestableVerifier.new(vkFlat, vkFlatIC);
 
-        console.log(`vkFlat: ${vkFlat}`);
-        console.log(`vkFlatIC: ${vkFlatIC}`);
+        console.log(`vkFlat: ${vkFlat}\n`);
+        console.log(`vkFlatIC: ${vkFlatIC}\n`);
         const testVerifyArgs = [
             vkFlat,
             vkFlatIC,
@@ -71,7 +71,7 @@ contract("TestableVerifier", () => {
 
         const gasEstimation = await verifier.TestVerify.estimateGas(...testVerifyArgs);
         console.log(`gas estimation: ${gasEstimation}`);
-        
+
         assert.strictEqual(verifyResult, true);
     });
 });

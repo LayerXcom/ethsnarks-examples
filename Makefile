@@ -1,4 +1,4 @@
-CLI = .build/sha256_preimage_cli
+CLI = .build/${spec}_preimage_cli
 
 all: $(CLI) test
 
@@ -7,13 +7,13 @@ $(CLI): release
 
 .build:
 	mkdir -p $@
-	cd $@ && cmake ../circuit/ || rm -rf ../$@
+	cd $@ && cmake ../circuit/${spec}/ || rm -rf ../$@
 
 debug:
-	mkdir -p .build && cd .build && cmake -DCMAKE_BUILD_TYPE=Debug ../circuit/
+	mkdir -p .build && cd .build && cmake -DCMAKE_BUILD_TYPE=Debug ../circuit/${spec}
 
 release:
-	mkdir -p .build && cd .build && cmake -DCMAKE_BUILD_TYPE=Release ../circuit/
+	mkdir -p .build && cd .build && cmake -DCMAKE_BUILD_TYPE=Release ../circuit/${spec}
 
 git-submodules:
 	git submodule update --init --recursive
@@ -21,14 +21,11 @@ git-submodules:
 clean:
 	rm -rf .build
 
-# python-test:
-# 	make -C python test
-
 solidity-test:
 	make -C solidity test
 
-test: .keys/sha256_preimage.pk.raw solidity-test
+test: .keys/${spec}_preimage.pk.raw solidity-test
 
-.keys/sha256_preimage.pk.raw: $(CLI)
+.keys/${spec}_preimage.pk.raw: $(CLI)
 	mkdir -p $(dir $@)
-	$(CLI) genkeys .keys/sha256_preimage.pk.raw .keys/sha256_preimage.vk.json
+	$(CLI) genkeys .keys/${spec}_preimage.pk.raw .keys/${spec}_preimage.vk.json

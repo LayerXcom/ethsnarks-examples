@@ -12,10 +12,14 @@ You can run `ethsnarks` on Docker:
 $ docker pull osuketh/ethsnarks:latest
 $ docker run -v `pwd`:/workspace/ethsnarks-examples --rm -it osuketh/ethsnarks /bin/bash
 $ cd /workspace/ethsnarks-examples
-$ make
 ```
 
-## measurements
+then, executing by `make` command.
+```
+$ make spec=sha256
+```
+
+## Measurements
 
 ### sha256
 gas estimation: 594886
