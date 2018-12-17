@@ -42,7 +42,7 @@ let proofToFlat = (proof) => {
 contract("TestableVerifier", () => {
     it("should be success for verifying", async () => {        
 
-        const preimageBytes64 = "5";
+        const preimageBytes64 = process.env.preimage;        
 
         const proofJson = libsha256Preimage.sha256_preimage_prove(sha256ProvingKeyPath, preimageBytes64);
         const proof = JSON.parse(proofJson);

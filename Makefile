@@ -21,7 +21,7 @@ git-submodules:
 clean:
 	rm -rf .build
 
-solidity-test:
+solidity-test:	
 	make -C solidity test
 
 test: .keys/${spec}_preimage.pk.raw solidity-test

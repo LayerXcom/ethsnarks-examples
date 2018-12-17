@@ -1,6 +1,7 @@
 # ethsnarks-exmaples
 Example implementations of ethsnarks(https://github.com/HarryR/ethsnarks).
 
+
 ## Building
 ```
 $ git clone git@github.com:LayerXcom/ethsnarks-examples.git
@@ -14,15 +15,19 @@ $ docker run -v `pwd`:/workspace/ethsnarks-examples --rm -it osuketh/ethsnarks /
 $ cd /workspace/ethsnarks-examples
 ```
 
-then, executing by `make` command.
+then, executing by `make` command and specifying a hash function algorithm and a preimage.
 ```
-$ make spec=sha256
+$ spec=sha256 preimage=10 make
 ```
+
+You proved that you knew the preimage without revealing it, and the smart contract verified it.
+
 
 ## Measurements
 
 ### sha256
 gas estimation: 594886
+
 
 #### key generation
 ```
@@ -89,6 +94,7 @@ gas estimation: 594886
 * GT elements in VK: 0
 * VK size in bits: 2292
 ```
+
 
 #### proof generation
 
